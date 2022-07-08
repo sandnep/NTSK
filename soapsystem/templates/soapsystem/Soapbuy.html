@@ -1,0 +1,133 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Order
+    </title> 
+  <link rel="stylesheet" href="{%static 'css/allstyle.css'%}"> 
+</head>
+
+<body>
+	
+	<div class="homelink">
+		<img src="{%static 'images/logo.png'%}" class="homelogo" >
+		<ul>
+				<li><a href="{% url 'Mainpage' %}">Home</a></li>
+				<li><a href="{% url 'Aboutshop' %}">About Shop</a></li>
+				<li><a href="{% url 'Soaps' %}">Beauty Soap</a></li>
+				<li><a href="{% url 'SoapBuy' %}">Buy Soap</a></li>
+				<li><a href="{% url 'contactform' %}">Contact</a></li>
+				<li><a href="{% url 'feedback' %}">Feedback</a></li>	
+                <li><a href="{% url 'Records' %}">Records</a></li>	
+				</a></li>
+			</ul>
+		</div>
+
+
+<div class="grid-container">
+<div class="item">
+        <div class="item1"><strong>BEAUTY SOAP</strong></div>
+            <br>
+            <br>
+            
+        <label name="soapprod1" class="soap1"for="soap">Charcoal-----------</label>
+
+              <label name="price" class="pricelbl" for="soap"><strong>Price :</strong> ₱120.00</label>
+
+              <br>
+              <br>
+              
+              <label name="soapprod1" class="soap1"for="soap">Glutathione-----------</label>
+
+              <label name="price" class="pricelbl" for="soap"><strong>Price :</strong> ₱150.00</label>
+              <br>
+              <br>
+
+              <label name="soapprod1" class="soap1"for="soap">Kojic-----------</label>
+              <label name="price" class="pricelbl" for="soap"><strong>Price :</strong> ₱100.00</label>
+     
+              <br>
+              <br>
+              
+              <label name="soapprod1" class="soap1"for="soap">Oatmeal-----------</label>
+
+              <label name="price" class="pricelbl" for="soap"><strong>Price :</strong> ₱125.00</label>
+          
+              <br>
+              <br>
+              
+              <label name="soapprod1" class="soap1"for="soap">Glass Skin-----------</label>
+              <label name="price" class="pricelbl" for="soap"><strong>Price :</strong> ₱170.00</label>
+
+              <br>
+              <br>
+            </div>
+
+        <div class="item">
+        <div class="item1"><strong>Order Now!</strong></div>
+            <br>
+            <br>
+        <form method="POST" action="">
+            {% csrf_token %}
+        <label name="soapprod1" class="soap1"for="soap">Name of Soap:</label>
+            <input class="info1" type="text" name="soapname" id="name1" placeholder="Soap name" required>
+        <br>
+
+        <label id="cod"  for="cod" class="info">Qty:</label>
+            <input class="info1" type="text" name="qty" id="name1" placeholder="How many soap your want to avail?" required>
+          
+            <div class="buyerinfo1"> Buyers Information </div>                                 
+            <label id="name1"  for="name1" class="info">Last Name:</label>
+            <input class="info1" type="text" name="lastname" id="name1" placeholder="type your last name here" required>
+            <br>
+            <label id="name1"  for="name1" class="info">First Name:</label>
+            <input class="info1" type="text" name="firstname" id="name1" placeholder="type your first name here" required>
+            <br>
+            <label id="name1"  for="name1" class="info">Middle Name:</label>
+            <input class="info1" type="text" name="middlename" id="name1" placeholder="type your middle name here" required>
+            <br>
+            <label name="contact" for="contact" class="info">Contact No:</label>
+            <input class="info1" type="contact" name="contact" id="contact" pattern="[0-9]{11}" placeholder="ex.09123456789" required>
+            <br>
+            <label name="email" for="email" class="info">Email:</label>
+            <input class="info1" type="email" name="email" id="email" placeholder="type you email here"required>
+            <br>
+
+
+            <div class="buyerinfo1"> Cash on Delivery </div>
+
+            <label id="cod"  for="cod" class="info"><strong>Address</strong></label>
+                <br>
+            <label id="cod"  for="cod" class="info">Street:</label>
+            <input class="info1" type="text" name="street" id="name1" placeholder="type your street/unit/number here" required>
+            <br>
+            <label id="cod"  for="cod" class="info">Subdivision:</label>
+            <input class="info1" type="text" name="subd" id="name1" placeholder="type your subdivision here" required>
+            <br>
+            <label id="cod"  for="cod" class="info">Barangay:</label>
+            <input class="info1" type="text" name="brgy" id="name1" placeholder="type your barangay here" required>
+            <br>
+            <label id="cod"  for="cod" class="info">City:</label>
+            <input class="info1" type="text" name="city" id="name1" placeholder="type your city here" required>
+            <br>
+            <label name="cod" for="cod" class="name1">Zip Code:</label>
+            <input class="info1" type="name1" name="zipcode" id="name1" placeholder="####" required>
+            <br>
+            <label name="sffee">Shipping Fee:<td class="Price2" id="deliveryFee" value=50> <strong>₱ 40.00 </strong></td>
+            <br>
+            <br>
+            <label name="sffee">Delivery Type:<td class="Price2" id="deliveryFee" value=50> <strong> Standard Delivery </strong></td>
+            <br>
+            <br>
+            <input name="reset" class="buttoncancel" type="reset" onclick="cancelOrder()" value="Cancel">
+            <input id="btn" type="Submit"></input>
+                        
+        </form>
+        </div>    
+    
+            
+</form>
+</body>
+</html>

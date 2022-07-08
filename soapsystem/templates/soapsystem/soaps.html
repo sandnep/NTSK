@@ -1,0 +1,129 @@
+
+{% load static %}
+<!DOCTYPE html> 
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>
+        Natural Skin
+    </title> 
+    <link rel="shortcut icon" type="image/png" href="{%static 'images/logo.png'%}">
+    <link rel="stylesheet" href="{%static 'css/allstyle.css'%}"> 
+
+
+</head>
+<div class="homelink">
+  <img src="{%static 'images/logo.png'%}" class="homelogo" >
+  <ul>
+      <li><a href="{% url 'Mainpage' %}">Home</a></li>
+      <li><a href="{% url 'Aboutshop' %}">About Shop</a></li>
+      <li><a href="{% url 'Soaps' %}">Beauty Soap</a></li>
+      <li><a href="{% url 'SoapBuy' %}">Buy Soap</a></li>
+      <li><a href="{% url 'contactform' %}">Contact</a></li>
+      <li><a href="{% url 'feedback' %}">Feedback</a></li>
+      <li><a href="{% url 'Records' %}">Records</a></li>		
+      </a></li>
+    </ul>
+  </div>
+<style>
+
+{
+  box-sizing: border-box;
+
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 50%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 50%;
+  display: inline-block;
+}
+#myUL li a {
+  margin-top: -1px; /* Prevent double borders */
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+   
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+h2{
+    text-align: center;
+    font-size: 60px;
+    color: #ffb3cc;
+
+}
+.container {
+        width: 375px;
+        height: 520;
+        background: #fff;
+        border-radius: 15px;
+        box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.6);
+        padding: 20px;
+        overflow-y: scroll;
+    }
+
+    
+</style>
+
+<h2>Beauty Soaps</h2>
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Product" title="Type in a name">
+
+<div class="grid-container">
+<section class="container">
+<ul id="myUL">
+  <li><a href="{% url 'kojicbenefits' %}">Kojic Soap</a></li>
+  <li><a href="{% url 'glassbenefits' %}">Glass Skin Soap</a></li>
+  <li><a href="{% url 'glutabenefits' %}">Glutathione Soap</a></li>
+  <li><a href="{% url 'oatbenefits' %}">Oatmeal Soap</a></li>
+  <li><a href="{% url 'charbenefits' %}">Charcoal Soap</a></li>
+  <li><a href="{% url 'kojicbenefits' %}">Whitening Soap</a></li>
+  <li><a href="{% url 'glassbenefits' %}">Berry Soap</a></li>
+  <li><a href="{% url 'glutabenefits' %}">Angel Soap</a></li>
+  <li><a href="{% url 'oatbenefits' %}">Smooth Soap</a></li>
+  <li><a href="{% url 'charbenefits' %}">Milk Soap</a></li>
+  
+  
+
+</ul>
+</div>
+<script>
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
+</section>
+</body>
+</html>

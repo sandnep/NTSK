@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html> 
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>
+		Feedback
+	</title> 
+	<link rel="shortcut icon" type="image/png" href="pictures/logo.png">
+	<link rel="stylesheet" href="{%static 'allstyles.css'%}">
+
+</head>
+<link rel="stylesheet" type="text/css" href="{% static 'css/mpage.css' %}">
+<div class="homelink">
+	<img src="{%static 'images/logo.png'%}" class="homelogo" >
+	<ul>
+			<li><a href="{% url 'Mainpage' %}">Home</a></li>
+			<li><a href="{% url 'Aboutshop' %}">About Shop</a></li>
+			<li><a href="{% url 'Soaps' %}">Beauty Soap</a></li>
+			<li><a href="{% url 'SoapBuy' %}">Buy Soap</a></li>
+			<li><a href="{% url 'contactform' %}">Contact</a></li>
+			<li><a href="{% url 'feedback' %}">Feedback</a></li>
+			<li><a href="{% url 'Records' %}">Records</a></li>		
+			</a></li>
+		</ul>
+	</div>
+	</div>
+	<center>
+		<div class="container">
+		
+			<form method="POST" action="/feedback/">
+				{% csrf_token %}
+				<div class="row">
+					<div class="col-md-2"></div>
+					<label class="col-md-8">Message</br>
+						<textarea id="message" name = "message" required="" placeholder="Write your feedback here!" cols="80" rows="10"></textarea></label>
+						<br>
+						<input name="submit" class="buttonsubmit" type="submit" onclick="submitOrder()" value="Submit">
+						
+
+				</div>
+
+			</form>
+
+		</div>
+	</center>
+	
+</body>
+</html>

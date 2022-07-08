@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html> 
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" type="text/css" href="{% static 'css/mpage.css' %}">
+
+	<title>Natural Skin- Message</title>
+</head>
+
+<body>
+	<div class="homelink">
+		<img src="{%static 'images/logo.png'%}" class="homelogo" >
+		<ul>
+				<li><a href="{% url 'Mainpage' %}">Home</a></li>
+				<li><a href="{% url 'Aboutshop' %}">About Shop</a></li>
+				<li><a href="{% url 'Soaps' %}">Beauty Soap</a></li>
+				<li><a href="{% url 'SoapBuy' %}">Buy Soap</a></li>
+				<li><a href="{% url 'contactform' %}">Contact</a></li>
+				<li><a href="{% url 'feedback' %}">Feedback</a></li>
+				<li><a href="{% url 'Records' %}">Records</a></li>		
+				</a></li>
+			</ul>
+		</div>
+	
+	<h1 style="color:#8c202c;">Contact Us</h1>
+	
+	<form method="POST" action="/contactform/">
+		{% csrf_token %}
+				
+	<div class="side" >
+	<label class="fn">Full Name:</label><br><br><input type="text" id="customerName" name="name" size="30" placeholder="Please enter your name here." required/>
+	<br>
+
+	<label class="em">E-mail:</label><br><br><input type="email" id="customerEmail" name="email" size="30" placeholder ="PLease enter your active e-mail here." required /> 
+
+	<br>
+
+	<br><br>
+	<label>Messages</label>
+	<br><br>
+	<textarea id="customerReview" placeholder="PLease enter your message here." name="message" rows="50" required></textarea>
+	<br>
+	<div>
+	<input id="btn"type="submit" name="btn" value="Submit"/>&nbsp;
+	</br>
+
+
+	</div>
+
+</body> 
+</html>

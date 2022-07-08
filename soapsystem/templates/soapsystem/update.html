@@ -1,0 +1,56 @@
+
+{% load static %}
+<!DOCTYPE html> 
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>
+			About- Natural Skin
+		</title> 
+		<link rel="shortcut icon" type="image/png" href="pictures/logo.png">
+		<link rel="stylesheet" href="{% static 'css/allstyle.css'%}">
+		
+	</head>
+<body>
+<center>
+	<div class="homelink">
+		<img src="{%static 'images/logo.png'%}" class="homelogo" >
+		<ul>
+				<li><a href="{% url 'Mainpage' %}">Home</a></li>
+				<li><a href="{% url 'Aboutshop' %}">About Shop</a></li>
+				<li><a href="{% url 'Soaps' %}">Beauty Soap</a></li>
+				<li><a href="{% url 'SoapBuy' %}">Buy Soap</a></li>
+				<li><a href="{% url 'contactform' %}">Contact</a></li>
+				<li><a href="{% url 'feedback' %}">Feedback</a></li>
+				<li><a href="{% url 'Records' %}">Records</a></li>		
+				</a></li>
+			</ul>
+		</div>
+		<div class="About">
+			<h3>Edit Order and Transaction Information</h3>
+		</div>
+		<br>
+		<form method="POST" action="">
+			{% csrf_token%} 
+				<div> Last Name: {{form.lastname}}</div>
+				<div> First Name: {{form.firstname}}</div>
+				<div> Middle Name: {{form.middlename}}</div>
+				<div> Contact Number: {{form.contact}}</div>
+				<div> Email: {{form.email}}</div>
+				<div> Street: {{form.street}}</div>
+				<div> Subdivision: {{form.subd}}</div>
+				<div> Barangay: {{form.brgy}}</div>
+				<div> City: {{form.city}}</div>
+				<div> Zip code: {{form.zipcode}}</div>
+				<div> Soap Name: {{form.soapname}}</div>
+				<div> Quantity: {{form.qty}}</div>
+				<br>
+			<input type ='submit'> </input>
+        </tr>
+		</form>
+	</div>
+</center>
+</body>
+</html>	

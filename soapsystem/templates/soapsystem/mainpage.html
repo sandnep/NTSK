@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html> 
+
+<html lang="en-US">
+    <head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/mpage.css' %}">
+
+		<title>Soap System</title>
+
+    </head>
+
+<body>
+	
+	<div class="homelink">
+		<img src="{%static 'images/logo.png'%}" class="homelogo" >
+		<ul>
+				<li><a href="{% url 'Mainpage' %}">Home</a></li>
+				<li><a href="{% url 'Aboutshop' %}">About Shop</a></li>
+				<li><a href="{% url 'Soaps' %}">Beauty Soap</a></li>
+				<li><a href="{% url 'SoapBuy' %}">Buy Soap</a></li>
+				<li><a href="{% url 'contactform' %}">Contact</a></li>
+				<li><a href="{% url 'feedback' %}">Feedback</a></li>
+				<li><a href="{% url 'Records' %}">Records</a></li>		
+				</a></li>
+			</ul>
+		</div>
+			<div class="link3home">
+				<h1>Soap is Life!</h1>
+				<p> watch and learn how to use soap properly,<br> Click the button to watch beauty soaps video.</p>
+				<div>
+					<a href="https://www.youtube.com/watch?v=33_1arqK0Dk" target="_blank">
+					<button type="button" ><span></span> Watch Importance of Beauty Soaps </button>
+				</a>
+				</div>
+			</div>
+
+</body>
+
+</html>

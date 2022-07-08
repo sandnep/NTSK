@@ -1,0 +1,105 @@
+
+{% load static %}
+<!DOCTYPE html> 
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>
+			About- Natural Skin
+		</title> 
+		<link rel="shortcut icon" type="image/png" href="pictures/logo.png">
+		<link rel="stylesheet" href="{% static 'css/allstyle.css'%}">
+		
+	</head>
+
+	<div class="homelink">
+		<img src="{%static 'images/logo.png'%}" class="homelogo" >
+		<ul>
+				<li><a href="{% url 'Mainpage' %}">Home</a></li>
+				<li><a href="{% url 'Aboutshop' %}">About Shop</a></li>
+				<li><a href="{% url 'Soaps' %}">Beauty Soap</a></li>
+				<li><a href="{% url 'SoapBuy' %}">Buy Soap</a></li>
+				<li><a href="{% url 'contactform' %}">Contact</a></li>
+				<li><a href="{% url 'feedback' %}">Feedback</a></li>
+                <li><a href="{% url 'Records' %}">Records</a></li>		
+				</a></li>
+			</ul>
+		</div>
+<center>
+   <table align="center">
+        <tr>
+            <th>Last Name:</th>
+            <th>First Name:</th>
+            <th>Middle Name:</th>
+            <th>Contact Number:</th>
+            <th>Email:</th>
+            <th>Street:</th>
+            <th>Subdivision:</th>
+            <th>Barangay:</th>
+            <th>Zip code:</th>
+            <th>Soap Name:</th>
+            <th> Quantity:</th>
+            <th></th>
+        </tr>
+        <tr>
+        {%for item in information%}
+            <td> {{item.lastname}}</td>
+            <td> {{item.firstname}}</td>
+            <td> {{item.middlename}}</td>
+            <td> {{item.contact}}</td>
+            <td> {{item.email}}</td>
+            <td> {{item.street}}</td>
+            <td> {{item.subd}}</td>
+            <td> {{item.brgy}}</td>
+            <td> {{item.zipcode}}</td>
+            <td> {{item.soapname}}</td>
+            <td> {{item.qty}}</td>
+            <td>
+                <a type='button' href="{% url 'Edit' item.pk%}" > Edit </a> <a class="btn btn-sm" type='button' href="{% url 'Cancel' item.pk %}" > Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br><br><br>
+    <table align="center">
+              <tr>
+                  <th> Name: </th>
+                  <th> Email: </th>
+                  <th> Message: </th>   
+                  <th></th>   
+              </tr>
+              <tr>
+              {%for item in ContactForm%}
+                  <td> {{item.name}}</td>
+                  <td> {{item.email}}</td>
+                  <td> {{item.message}}</td>
+                      <td>
+                        <a  type='button' href="{% url 'Cancel1' item.pk %}" > Delete</a>
+                      </td>
+              </tr>
+              {% endfor %}
+    </table>
+    <br><br><br>
+    <table align="center">
+        <tr>
+            <th> Message: </th> 
+            <th></th>  
+        </tr>
+        <tr>
+        {%for item in Feedback%}
+            <td> {{item.message}}</td>
+            <td>
+                <a type='button' href="{% url 'Cancel2' item.pk %}" > Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    </form>
+</center>
+    </body>
+</html>
+
+
